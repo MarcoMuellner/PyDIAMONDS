@@ -1,5 +1,5 @@
-recursive-include include/ *
-recursive-include source/ *
+recursive-include DIAMONDS/include/ *
+recursive-include DIAMONDS/source/ *
 include *.cpp
 include *.h
 recursive-include pybind11/ *
