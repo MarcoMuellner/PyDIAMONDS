@@ -1,0 +1,3 @@
+[submodule "DIAMONDS"]
+	path = DIAMONDS
+	url = https://github.com/EnricoCorsaro/DIAMONDS
