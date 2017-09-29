@@ -72,7 +72,7 @@ setup(
     author='Enrico Corsaro, Joris de Ridder & Marco Müllner',
     author_email='muellnermarco@gmail.com',
     description='A tool for bayesian parameter estimation and model selection',
-    long_description='',
+    long_description=open('README.rst').read(),
     # add extension module
     ext_modules=[CMakeExtension('pyDiamonds')],
     # add custom build_ext command
