@@ -19,4 +19,4 @@ Documentation
 
 The documentation of the classes available to python will be more and more implemented over time. See the docs folder
 for documentation. For a more exhaustive documentation visit https://github.com/EnricoCorsaro/DIAMONDS where you can
-find a more exhaustive documentation on DIAMONDS.
+find a more exhaustive documentation on DIAMONDS. Various examples can also be found in the examples folder.
