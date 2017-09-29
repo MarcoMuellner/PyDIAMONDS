@@ -8,28 +8,22 @@ class EggboxLikelihood(Likelihood):
     def logValue(self,nestedSampleOfParameters):
         return np.power(2.0+np.cos(nestedSampleOfParameters[0]/2)*np.cos(nestedSampleOfParameters[1]/2),5)
 
+data = np.array(([],[]))        #create Dummy data
+model = ZeroModel(data[0])      #create dummy model -> likelihood directly computed
 
-
-#create Dummy data
-data = np.array(([],[]))
-#create dummy model -> likelihood directly computed
-model = ZeroModel(data[0])
-
-#setup prior distribution
-priors = np.array(([0,0],[10*np.pi,10*np.pi])).astype(float)
+priors = np.array(([0,0],[10*np.pi,10*np.pi])).astype(float) #setup prior distribution. Array must be float!
 uniformPriors = UniformPrior(priors[0],priors[1])
 
-#setup likelihood function
-likelihood = EggboxLikelihood(data[0],model)
+likelihood = EggboxLikelihood(data[0],model) #setup likelihood function
 
-#setup k-means clusterer using euclidean metric
+
 metric = EuclideanMetric()
 minNclusters = 6
 maxNclusters = 10
 nTrials = 10
 relTolerance = 0.01
 
-kmeans = KmeansClusterer(metric,minNclusters,maxNclusters,nTrials,relTolerance)
+kmeans = KmeansClusterer(metric,minNclusters,maxNclusters,nTrials,relTolerance) #setup k-means clusterer using euclidean metric
 
 #configure nested sampling reference
 
@@ -52,10 +46,10 @@ nestedSampler = MultiEllipsoidSampler(printOnScreen,[uniformPriors],likelihood,m
 tolerance = 1.e2
 exponent = 0.4
 
-livePoiontsReducer = PowerlawReducer(nestedSampler,tolerance,exponent,terminationFactor)
+livePointsReducer = PowerlawReducer(nestedSampler, tolerance, exponent, terminationFactor)
 outputPathPrefix = "demoEggboxFunction_"
-nestedSampler.run(livePoiontsReducer,nInitialIterationsWithoutClustering,nIterationsWithSameClustering,maxNdrawAttempts,
-                  terminationFactor,outputPathPrefix)
+nestedSampler.run(livePointsReducer, nInitialIterationsWithoutClustering, nIterationsWithSameClustering, maxNdrawAttempts,
+                  terminationFactor, outputPathPrefix)
 
 #save results
 results = Results(nestedSampler)

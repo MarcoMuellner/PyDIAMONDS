@@ -48,7 +48,7 @@ The ``Likelihood`` abstract class provides likelihood computations.
 ``Model``
 ---------
 
-The``Model`` abstract class provides an interface for building models.
+The ``Model`` abstract class provides an interface for building models.
 
 + ``__init__(ndarray)``
 + ``getCovariates()`` ``ret:ndarray``
