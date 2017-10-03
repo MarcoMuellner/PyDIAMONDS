@@ -12,7 +12,7 @@ PyDIAMONDS is provided through pypi. Simply call::
 
     pip install pyDiamonds
 
-to install the package.
+to install the package. Be sure to have a full cmake toolchain as well as clang/gcc on your machine to build the code.
 
 Documentation
 -------------
