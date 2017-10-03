@@ -68,7 +68,7 @@ class CMakeBuild(build_ext):
 
 setup(
     name='pyDiamonds',
-    version='1.0.0',
+    version='1.0.1',
     author='Enrico Corsaro, Joris de Ridder & Marco Müllner',
     author_email='muellnermarco@gmail.com',
     description='A tool for bayesian parameter estimation and model selection',
