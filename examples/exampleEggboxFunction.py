@@ -1,6 +1,5 @@
 import numpy as np
-from pyDiamonds import ZeroModel,UniformPrior,Likelihood,EuclideanMetric,KmeansClusterer,MultiEllipsoidSampler\
-    ,PowerlawReducer,Results
+from pyDiamonds import *
 
 class EggboxLikelihood(Likelihood):
     def __init__(self,observation,model):

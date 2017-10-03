@@ -5,6 +5,30 @@ This example should show a quick example on how to use pyDiamonds and show some 
 
 Eggbox Example
 --------------
+This tutorial assumes that python and pip are installed as well as minimum experince with python.. If you don't have
+them installed, visit `this link<https://wiki.python.org/moin/BeginnersGuide>`_ for a beginners guide, as well as
+`this link<https://pip.pypa.io/en/stable/installing/>`_ for an installation guide on pip.
+
+If you have python as well as pip, simply open the terminal of your choise and install pyDIAMONDS as well as numpy
+using:
+
+.. code-block:: ba
+    user@machine:~$pip install pyDiamonds
+    user@machine:~$pip install numpy
+
+After installing pyDIAMONDS, open python
+
+.. code-block:: bash
+
+    user@machine:~$ python
+
+After opening python, the first step is to import pyDIAMONDS and numpy
+
+.. code-block:: python
+
+    import numpy as np
+    from pyDiamonds import *
+
 Lets approach the Eggbox demo from DIAMONDS. First of all we need to create a small class that implements the
 Likelihood. This class only implements the logValue method of Likelihood to provide the Likelihood.
 
