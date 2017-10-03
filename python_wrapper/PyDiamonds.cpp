@@ -54,6 +54,7 @@
 #include "include/PyUniformPrior.h"
 #include "include/PyZeroPrior.h"
 #include "include/PyZeroSampler.h"
+#include "include/PyResults.h"
 
 namespace py = pybind11;
 using Eigen::ArrayXd;
@@ -218,7 +219,9 @@ PYBIND11_MODULE(pyDiamonds,m)
         .def("writeEvidenceInformationToFile",&Results::writeEvidenceInformationToFile)
         .def("writePosteriorProbabilityToFile",&Results::writePosteriorProbabilityToFile)
         .def("writeParametersSummaryToFile",&Results::writeParametersSummaryToFile)
-        .def("writeObjectsIdentificationToFile",&Results::writeObjectsIdentificationToFile);
+        .def("writeObjectsIdentificationToFile",&Results::writeObjectsIdentificationToFile)
+        .def("parameterEstimation",&ResultsPublicist::parameterEstimation)
+        .def("posteriorProbability",&ResultsPublicist::posteriorProbability);
 
     py::class_<SuperGaussianPrior,PySuperGaussianPrior,Prior>(m,"SuperGaussianPrior")
         .def(py::init<const RefArrayXd, const RefArrayXd, const RefArrayXd>())

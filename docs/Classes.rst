@@ -164,7 +164,7 @@ The ``NormalPrior`` class implements the virtual functions of ``Prior`` and has 
 
 + ``__init__(ndarray,ndarray)``
 + ``getMean()`` ``ref:ndarray``
-+ ``getStandardDeviation()`` ``ref:ndarray``
++ ``getStandardDeviation()`` ``ret:ndarray``
 
 ``PowerlawReducer``
 -------------------
@@ -184,7 +184,9 @@ The ``Results`` class implements a possibility to write files to the system.
 + ``writePosteriorProbabilityToFile(str)``
 + ``writeLogEvidenceToFile(str)``
 + ``writeLogMeanLiveEvidenceToFile(str)``
-+ ``writeParametersSummaryToFile(str, double, bool )`` 
++ ``writeParametersSummaryToFile(str, double, bool )``
++ ``parameterEstimation(double, bool)`` ``ret:ndarray``
++ ``posteriorProbability()`` ``ret:ndarray``
 
 ``SuperGaussianPrior``
 ----------------------
