@@ -92,3 +92,5 @@ MANIFEST
 sosize-*.txt
 pybind11Config*.cmake
 pybind11Targets.cmake
+
+venv/

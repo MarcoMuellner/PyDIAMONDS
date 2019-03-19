@@ -15,10 +15,10 @@ template <class ModelBase = Model> class PyModel : public ModelBase
 {
 public:
     using ModelBase::ModelBase;
-    ArrayXd predict(RefArrayXd predictions, const RefArrayXd modelParameters) override
+    void predict(RefArrayXd predictions, const RefArrayXd modelParameters) override
     {
         PYBIND11_OVERLOAD_PURE(
-                ArrayXd,
+                void,
                 ModelBase,
                 predict,
                 predictions,

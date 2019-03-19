@@ -22,7 +22,9 @@ maxNclusters = 10
 nTrials = 10
 relTolerance = 0.01
 
-kmeans = KmeansClusterer(metric,minNclusters,maxNclusters,nTrials,relTolerance) #setup k-means clusterer using euclidean metric
+project= PrincipalComponentProjector(False,0.7)
+
+kmeans = KmeansClusterer(metric,project,True,minNclusters,maxNclusters,nTrials,relTolerance) #setup k-means clusterer using euclidean metric
 
 #configure nested sampling reference
 
@@ -37,7 +39,7 @@ initialEnlargementFraction = 0.2                #Fraction by which each axis in 
 shrinkingRate = 0.15                            #Exponent for remaining prior mass in ellipsoid enalargement fraction
                                                 #It is a number between 0 and 1. The smalle the slower the shrinkage of
                                                 # the ellipsoids
-terminationFactor = 0.05                        #termination factor for nesting loops
+terminationFactor = 1                       #termination factor for nesting loops
 
 nestedSampler = MultiEllipsoidSampler(printOnScreen,[uniformPriors],likelihood,metric,kmeans,initialNobjects
                                       ,minNobjects,initialEnlargementFraction,shrinkingRate)
@@ -47,8 +49,8 @@ exponent = 0.4
 
 livePointsReducer = PowerlawReducer(nestedSampler, tolerance, exponent, terminationFactor)
 outputPathPrefix = "demoEggboxFunction_"
-nestedSampler.run(livePointsReducer, nInitialIterationsWithoutClustering, nIterationsWithSameClustering, maxNdrawAttempts,
-                  terminationFactor, outputPathPrefix)
+nestedSampler.run(livePointsReducer, nInitialIterationsWithoutClustering, nIterationsWithSameClustering
+                  , maxNdrawAttempts, terminationFactor,0, outputPathPrefix)
 
 #save results
 results = Results(nestedSampler)
